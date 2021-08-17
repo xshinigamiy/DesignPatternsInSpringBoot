@@ -1,0 +1,15 @@
+---
+version: '3.9'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_java
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=order
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - "5432:5432"
